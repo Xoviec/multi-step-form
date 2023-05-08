@@ -1,11 +1,83 @@
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('assets/fonts/Ubuntu-Regular.ttf');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('assets/fonts/Ubuntu-Bold.ttf');
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('assets/fonts/Ubuntu-Medium.ttf');
+  font-weight: medium;
+}
+
+
 .App {
-  height: 600px;
+  /* height: 600px; */
   width: 940px;
   background-color: blanchedalmond;
+  padding: 16px;
+  font-family: Ubuntu;
 }
 
 nav{
   height: 568px;
   width: 274px;
+  background-image: url(assets/images/bg-sidebar-desktop.svg);
 }
 
+.step-list{
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-step{
+  display: flex;
+  margin-left: 32px;
+  margin-top: 40px;
+}
+
+.nav-step span{
+  color: lightblue;
+  font-size: 11px;
+  font-weight: medium;
+}
+
+.nav-step p{
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+.nav-step button{
+  height: 33px;
+  width: 33px;
+  border-radius: 50%;
+  color: white;
+  border: 1px solid white;
+  background-color: transparent;
+  margin-right: 16px;
+  font-weight: bold;
+}
+.nav-step:hover{
+  cursor: pointer;
+}
+.nav-step:hover button{
+  background-color: skyblue;
+  border: 1px solid skyblue;
+  color: black;
+  cursor: pointer;
+
+
+}
+
+.nav-step div{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
