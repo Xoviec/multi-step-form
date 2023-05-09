@@ -85,5 +85,117 @@ nav{
 
 
 .step-component{
-  margin: 56px 0px 0px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 2rem 0px 0px 100px;
+  height: 32rem;
+  width: 30rem;
+  /* background-color: rebeccapurple; */
+}
+
+.step-component p{
+  color: #022959;
+}
+
+.step-component span{
+  color: grey;
+}
+
+.step-component .form{
+  display: flex;
+  flex-direction: column;
+}
+
+.form p{
+  font-weight: normal;
+  font-size: 0.9rem;
+  margin: 1.6rem 0 0.6rem 0;
+}
+
+.form input{
+  height: 48px;
+  width: calc(100%-16px);
+  border-radius: 8px;
+  border: 1px solid #D6D9E6;
+  padding-left: 16px;
+}
+
+.form input::placeholder{
+  font-family: Ubuntu;
+  font-weight: medium;
+  color: grey;
+}
+
+.form input:focus{
+  outline: none;
+  border:  1px solid #483EFF;
+}
+
+.input-title{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0;
+}
+
+.input-title p:last-child{
+  color: #EE374A;
+  font-weight: bold;
+}
+
+.hidden{
+  display: none;
+}
+
+.step-component-footer{
+  display: flex;
+  justify-content: space-between;
+}
+
+.step-component-footer button{
+  background-color: transparent;
+  color: #164A8A;
+  font-weight: bold;
+  height: 3rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.step-component-footer button:last-child{
+  background-color: #164A8A;
+  color: white;
+  font-weight: bold;
+  height: 3rem;
+  width: 8rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+
+.plans{
+  display: flex;
+  gap: 1rem;
+}
+
+.plan-card{
+  width: 6.7rem;
+  height: 7.7rem;
+  border-radius: 8px;
+  border: 1px solid #D6D9E6;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  flex-grow: 1;
+}
+
+.plan-card img{
+  flex-grow: 1;
+}
+
+.plan-card p{
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
 }
