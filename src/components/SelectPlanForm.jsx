@@ -28,6 +28,9 @@ export const SelectPlanForm = () =>{
                     <span>$15/mo</span>
                 </div>
                 </div>
+                <div className='plan-change'>
+
+                </div>
             </div>
             <div className="step-component-footer">
                 <button>Go back</button>
