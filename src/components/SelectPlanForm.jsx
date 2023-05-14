@@ -1,6 +1,7 @@
 import arcade from '../assets/images/icon-arcade.svg'
 import advanced from '../assets/images/icon-advanced.svg'
 import pro from '../assets/images/icon-pro.svg'
+import { MyToggle } from './shared/MyToggle'
 
 export const SelectPlanForm = () =>{
 
@@ -29,6 +30,7 @@ export const SelectPlanForm = () =>{
                 </div>
                 </div>
                 <div className='plan-change'>
+                    <MyToggle></MyToggle>
 
                 </div>
             </div>

@@ -19,7 +19,7 @@
 .App {
   /* height: 600px; */
   width: 940px;
-  background-color: blanchedalmond;
+  background-color: #f0f0f3;
   padding: 16px;
   font-family: Ubuntu;
   display: flex;
@@ -178,8 +178,10 @@ nav{
 .plans{
   margin-top: 2rem;
   display: flex;
+  /* flex-direction: column; */
   gap: 1rem;
 }
+
 
 .plan-card{
   width: 6.7rem;
@@ -202,8 +204,215 @@ nav{
 }
 
 .plan-change{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 2rem;
   width: 100%;
   height: 3rem;
   background-color: #D6D9E6;
+  border-radius: 8px;
+}
+
+.active{
+  background-color: #483EFF;
+}
+
+.myToggle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.myToggle p{
+  margin: 0;
+  color: gray;
+}
+
+.myToggle1{
+  position: relative;
+  display: flex;
+  height: 1.5rem;
+  width: 2.75rem;
+  justify-items: flex-end;
+  border-radius: 25px;
+  background-color: #022959;
+  border: none;
+  display: flex;
+  align-items: center;
+  padding: auto;
+
+}
+
+.myToggle2{
+  display: inline-block;
+  z-index: 2;
+  height: 1.1rem;
+  width: 1.1rem;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  border-radius: 50%;
+  background-color: white;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+transition-duration: 150ms;
+}
+
+
+
+.bg-gray-200{
+  background-color: gray;
+}
+
+.translate-x-1{
+  transform: translateX(-0.25rem);
+}
+
+.translate-x-6{
+	transform: translateX(1.15rem);
+}
+
+.myToggle .plan-active{
+  color: #022959;
+}
+
+.addons{
+  margin-top: 2rem;
+}
+
+.checkbox{
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100%-4rem);
+  height: 4.8rem;
+  padding: 0 2rem 0 2rem;
+  border: 1.5px solid #D6D9E6;
+  border-radius: 8px;
+}
+
+.checkbox-checked{
+  border: 1.5px solid #483EFF;
+  background-color: #F8F9FF;
+}
+
+
+
+
+
+.checkbox p{
+  color: #483EFF;
+}
+
+.box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #483EFF;
+  width: 1rem;
+  height: 1rem;
+  border: 1.5px solid #483EFF;
+  border-radius: 4px;
+}
+
+.box-unchecked{
+  background-color: transparent;
+  border: 1.5px solid #D6D9E6;
+}
+
+.checkbox-desc { 
+  margin-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.checkbox-desc span{
+
+  color: #022959;
+  font-weight: normal;
+}
+
+.checkbox-desc span:last-child{
+  color: #9699AA;
+  font-weight: medium;
+  font-size: 10px;
+}
+
+
+.summary{
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+
+
+.sum{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #D6D9E6;
+  padding: 0.1rem 16px 1.5rem 16px;
+  border-radius: 8px;
+}
+
+
+.choosed-plan{
+  width: 100%;
+  border-radius: 8px;
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.choosed-plan p{
+  margin: 1rem 0 0.5rem 0;
+}
+
+.choosed-plan span{
+  text-decoration: underline;
+}
+
+.choosed-plan div:first-child{
+  flex-grow: 1;
+}
+
+.break-line{
+  height: 1px;
+  width: 100%;
+  background-color: #9699AA;
+}
+
+.choosed-addons{
+  margin-top: 0.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 2rem;
+}
+
+.choosed-addons p{
+  color: gray;
+  margin: 0;
+}
+
+.choosed-addons span{
+  font-weight: normal;
+  color: #022959;
+}
+
+.total{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px 0 16px;
 }
