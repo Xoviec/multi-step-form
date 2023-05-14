@@ -73,8 +73,12 @@ nav{
   border: 1px solid skyblue;
   color: black;
   cursor: pointer;
+}
 
-
+.nav-step-active button{
+  background-color: skyblue;
+  border: 1px solid skyblue;
+  color: black;
 }
 
 .nav-step div{

@@ -14,28 +14,28 @@ console.log(activeStep)
     <div className="App">
       <nav>
         <div className='step-list'>
-          <div className='nav-step' onClick={()=>(setActiveStep(1))}>
+          <div className={`nav-step ${activeStep === 1 ? `nav-step-active` : ``}`} onClick={()=>(setActiveStep(1))}>
             <button>1</button>
             <div>
               <span>STEP 1</span>
               <p>YOUR INFO</p>
             </div>
           </div>
-          <div className='nav-step'  onClick={()=>(setActiveStep(2))}>
+          <div className={`nav-step ${activeStep === 2 ? `nav-step-active` : ``}`}  onClick={()=>(setActiveStep(2))}>
             <button>2</button>
             <div>
               <span>STEP 2</span>
               <p>SELECT PLAN</p>
             </div>
           </div>
-          <div className='nav-step'  onClick={()=>(setActiveStep(3))}>
+          <div className={`nav-step ${activeStep === 3 ? `nav-step-active` : ``}`}  onClick={()=>(setActiveStep(3))}>
             <button>3</button>
             <div>
               <span>STEP 3</span>
               <p>ADD-ONS</p>
             </div>
           </div>
-          <div className='nav-step'  onClick={()=>(setActiveStep(4))}>
+          <div className={`nav-step ${activeStep === 4 ? `nav-step-active` : ``}`}  onClick={()=>(setActiveStep(4))}>
             <button>4</button>
             <div>
               <span>STEP 4</span>
