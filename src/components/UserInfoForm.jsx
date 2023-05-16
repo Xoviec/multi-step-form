@@ -1,4 +1,4 @@
-export const UserInfoForm = () =>{
+export const UserInfoForm = ({changeStep}) =>{
 
 
     return(
@@ -27,7 +27,7 @@ export const UserInfoForm = () =>{
             </div>
             <div className="step-component-footer">
                 <div></div>
-                <button>Next Step</button>
+                <button onClick={(()=>changeStep(1))}>Next Step</button>
             </div>
 
         </div>

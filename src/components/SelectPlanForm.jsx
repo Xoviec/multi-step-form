@@ -3,7 +3,7 @@ import advanced from '../assets/images/icon-advanced.svg'
 import pro from '../assets/images/icon-pro.svg'
 import { MyToggle } from './shared/MyToggle'
 
-export const SelectPlanForm = () =>{
+export const SelectPlanForm = ({changeStep}) =>{
 
 
     return(
@@ -35,8 +35,8 @@ export const SelectPlanForm = () =>{
                 </div>
             </div>
             <div className="step-component-footer">
-                <button>Go back</button>
-                <button>Next Step</button>
+            <button onClick={(()=>changeStep(-1))}>Go Back </button>
+                <button onClick={(()=>changeStep(1))}>Next Step</button>
             </div>
           
         </div>

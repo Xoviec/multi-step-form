@@ -9,6 +9,13 @@ function App() {
 
   const [activeStep, setActiveStep] = useState(1)
 
+
+  const changeStep = (num) =>{
+
+        setActiveStep(activeStep+num)
+
+  }
+
 console.log(activeStep)
   return (
     <div className="App">
@@ -47,13 +54,13 @@ console.log(activeStep)
       <container>
         {
           activeStep === 1 ? 
-            <UserInfoForm></UserInfoForm>
+            <UserInfoForm changeStep={changeStep}></UserInfoForm>
           : activeStep === 2 ? 
-            <SelectPlanForm></SelectPlanForm>
+            <SelectPlanForm changeStep={changeStep}></SelectPlanForm>
           : activeStep === 3 ? 
-            <AddOnsForm></AddOnsForm>
+            <AddOnsForm changeStep={changeStep}></AddOnsForm>
           :  
-            <SummaryForm></SummaryForm>
+            <SummaryForm changeStep={changeStep}></SummaryForm>
 
 
 

@@ -5,7 +5,7 @@ import { MyRadioGroup } from './shared/MyRadioGroup'
 import  Checkmark from '../assets/images/icon-checkmark.svg'
 import { MyCheckBox } from './shared/MyCheckBox'
   
-export const AddOnsForm = () =>{
+export const AddOnsForm = ({changeStep}) =>{
 
     const addOns = [
         {
@@ -50,8 +50,8 @@ export const AddOnsForm = () =>{
             
         </div>
         <div className="step-component-footer">
-            <button>Go back</button>
-            <button>Next Step</button>
+        <button onClick={(()=>changeStep(-1))}>Go back</button>
+            <button onClick={(()=>changeStep(1))}>Next Step</button>
 
         </div>
       

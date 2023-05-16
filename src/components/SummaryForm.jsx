@@ -1,4 +1,4 @@
-export const SummaryForm = () =>{
+export const SummaryForm = ({changeStep}) =>{
 
     return(
         <div className="step-component">
@@ -40,8 +40,8 @@ export const SummaryForm = () =>{
             </div>
         </div>
         <div className="step-component-footer">
-            <button>Go back</button>
-            <button>Next Step</button>
+        <button onClick={(()=>changeStep(-1))}>Go back</button>
+            <button>Comfirm</button>
         </div>
       
     </div>
