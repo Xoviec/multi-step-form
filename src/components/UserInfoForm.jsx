@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const UserInfoForm = ({changeStep, handleInputChange, formData}) =>{
+export const UserInfoForm = ({changeStep, handleInputChange, formData, isRequired}) =>{
 
 
 
@@ -25,17 +25,17 @@ export const UserInfoForm = ({changeStep, handleInputChange, formData}) =>{
                     <form className="form" onChange={handleInputChange}>
                         <div className="input-title">
                             <p>Name</p>
-                            <p className={`${formData.name ? `hidden`: ``}`}>This field is required</p>
+                            <p className={`${isRequired ? `${formData.name ? `hidden`: ``}` : `hidden`}`}>This field is required</p>
                         </div>
                         <input type="text" placeholder="e.g. Stephen King" name='name' value={formData.name}/>
                         <div className="input-title">
                             <p>Email Address</p>
-                            <p className={`${formData.email ? `hidden`: ``}`}>This field is required</p>
+                            <p className={`${isRequired ? `${formData.email ? `hidden`: ``}` : `hidden`}`}>This field is required</p>
                         </div>                
                         <input type="text" placeholder="e.g. stephenking@lorem.com" name='email' value={formData.email}/>
                         <div className="input-title">
                             <p>Phone Number</p>
-                            <p className={`${formData.phoneNumber ? `hidden`: ``}`}>This field is required</p>
+                            <p className={`${isRequired ? `${formData.phoneNumber ? `hidden`: ``}` : `hidden`}`}>This field is required</p>
                         </div>                
                         <input type="text" placeholder="e.g. 732 219 213" name='phoneNumber' value={formData.phoneNumber}/>
                     </form>
