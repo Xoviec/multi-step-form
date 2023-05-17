@@ -41,7 +41,6 @@ function App() {
 
   }
 
-console.log(activeStep)
   return (
     <div className="App">
       <nav>

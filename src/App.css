@@ -186,6 +186,11 @@ nav{
   gap: 1rem;
 }
 
+.plans .active-plan{
+  border: 1px solid #483EFF;
+  background-color: #F8F9FF;
+}
+
 
 .plan-card{
   width: 6.7rem;
@@ -197,6 +202,8 @@ nav{
   padding: 16px;
   flex-grow: 1;
 }
+
+
 
 .plan-card img{
   flex-grow: 1;
