@@ -37,13 +37,7 @@ function App() {
 
   const changeStep = (num) =>{
 
-        if(formData.name && formData.email && formData.phoneNumber){
           setActiveStep(activeStep+num)
-          setIsRequired(false)
-        }
-        else{
-          setIsRequired(true)
-        }
 
   }
 
@@ -93,7 +87,7 @@ console.log(activeStep)
       <container>
         {
           activeStep === 1 ? 
-            <UserInfoForm changeStep={changeStep} handleInputChange={handleInputChange} formData={formData} isRequired={isRequired}></UserInfoForm>
+            <UserInfoForm changeStep={changeStep} handleInputChange={handleInputChange} formData={formData} ></UserInfoForm>
           : activeStep === 2 ? 
             <SelectPlanForm changeStep={changeStep}></SelectPlanForm>
           : activeStep === 3 ? 

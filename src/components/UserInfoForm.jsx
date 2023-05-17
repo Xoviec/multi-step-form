@@ -1,20 +1,21 @@
 import { useState } from "react";
 
-export const UserInfoForm = ({changeStep, handleInputChange, formData, isRequired}) =>{
+export const UserInfoForm = ({changeStep, handleInputChange, formData}) =>{
+
+    const [isRequired, setIsRequired] = useState(false)
+
+    const handleChangeStep = () =>{
 
 
-
-
-
-
-    const checkForms = (e) =>{
-
-        // console.log(e.target.name)
-
-        // if(e.target.name)
-        console.log(e)
-
+        if(formData.name && formData.email && formData.phoneNumber){
+            changeStep(1)
+            setIsRequired(false)
+          }
+          else{
+            setIsRequired(true)
+          }
     }
+
 
     return(
 
@@ -42,7 +43,7 @@ export const UserInfoForm = ({changeStep, handleInputChange, formData, isRequire
             </div>
             <div className="step-component-footer">
                 <div></div>
-                <button onClick={(()=>changeStep(1))}>Next Step</button>
+                <button onClick={handleChangeStep}>Next Step</button>
             </div>
 
         </div>
