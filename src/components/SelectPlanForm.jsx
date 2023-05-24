@@ -24,19 +24,19 @@ export const SelectPlanForm = ({changeStep, formData, handleInputChange}) =>{
                 <span>You have the option of monthly or yearly billing.</span>
                 <form className="plans" onChange={handleInputChange}>
                     <input type='radio' name='plan' id='arcade' className='hidden' value='arcade'/>
-                    <label for='arcade' className={`plan-card ${choosedPlan === `arcade` ? `active-plan` : ``}`}>
+                    <label for='arcade' className={`plan-card ${formData.plan === `arcade` ? `active-plan` : ``}`}>
                         <img width="40px" height="40px" src={arcade} alt="" />
                         <p>Arcade</p>
                         <span>$9/mo</span>
                     </label>
                     <input type='radio' name='plan' id='advanced' className='hidden' value='advanced'/>
-                    <label for='advanced' className={`plan-card ${choosedPlan === `advanced` ? `active-plan` : ``}`}>
+                    <label for='advanced' className={`plan-card ${formData.plan === `advanced` ? `active-plan` : ``}`}>
                         <img width="40px" height="40px" src={advanced} alt="" />
                         <p>Advanced</p>
                         <span>$12/mo</span>
                     </label>
                     <input type='radio' name='plan' id='pro' className='hidden' value='pro'/>
-                    <label for='pro' className={`plan-card ${choosedPlan === `pro` ? `active-plan` : ``}`}>
+                    <label for='pro' className={`plan-card ${formData.plan === `pro` ? `active-plan` : ``}`}>
                         <img width="40px" height="40px" src={pro} alt="" />
                         <p>Pro</p>
                         <span>$15/mo</span>
