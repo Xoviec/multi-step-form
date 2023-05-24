@@ -203,6 +203,11 @@ nav{
   flex-grow: 1;
 }
 
+.plan-card:hover{
+  border: 1px solid #483EFF;
+
+}
+
 
 
 .plan-card img{

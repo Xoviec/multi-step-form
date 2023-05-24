@@ -13,7 +13,8 @@ function App() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phoneNumber: ''
+    phoneNumber: '',
+    plan: ''
   });
 
 
@@ -23,6 +24,8 @@ function App() {
       ...prevData,
       [name]: value
     }));
+
+    console.log(formData)
 
 
     // if (formData.name && formData.email && formData.phoneNumber) {
@@ -88,7 +91,7 @@ function App() {
           activeStep === 1 ? 
             <UserInfoForm changeStep={changeStep} handleInputChange={handleInputChange} formData={formData} ></UserInfoForm>
           : activeStep === 2 ? 
-            <SelectPlanForm changeStep={changeStep}></SelectPlanForm>
+            <SelectPlanForm changeStep={changeStep} handleInputChange={handleInputChange} formData={formData}></SelectPlanForm>
           : activeStep === 3 ? 
             <AddOnsForm changeStep={changeStep}></AddOnsForm>
           :  
