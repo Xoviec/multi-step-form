@@ -8,7 +8,19 @@ export const SelectPlanForm = ({changeStep, formData, handleInputChange}) =>{
 
 
     const [pricingMonthly, setPricingMonthly] = useState(false)
+
     const [choosedPlan, setChoosedPlan] = useState('')
+
+
+
+    const handleChangeStep = () =>{
+
+
+        if(formData.plan){
+            changeStep(1)
+          }
+
+    }
 
 
 
@@ -44,12 +56,11 @@ export const SelectPlanForm = ({changeStep, formData, handleInputChange}) =>{
                 </form>
                 <div className='plan-change'>
                     <MyToggle pricingMonthly={pricingMonthly} changePricing={changePricing}></MyToggle>
-
                 </div>
             </div>
             <div className="step-component-footer">
             <button onClick={(()=>changeStep(-1))}>Go Back </button>
-                <button onClick={(()=>changeStep(1))}>Next Step</button>
+                <button onClick={handleChangeStep}>Next Step</button>
             </div>
           
         </div>
