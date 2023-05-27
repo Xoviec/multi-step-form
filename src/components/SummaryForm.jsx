@@ -1,4 +1,4 @@
-export const SummaryForm = ({changeStep}) =>{
+export const SummaryForm = ({changeStep, formData}) =>{
 
     return(
         <div className="step-component">
@@ -9,7 +9,7 @@ export const SummaryForm = ({changeStep}) =>{
                 <div className="sum">
                     <div className="choosed-plan">
                         <div>
-                            <p>Arcade (yearly)</p>
+                            <p>{formData.plan} (yearly)</p>
                             <span>Change</span>
                         </div>
                         <div>
@@ -19,18 +19,22 @@ export const SummaryForm = ({changeStep}) =>{
                         </div>
                     </div>
                     <div className="break-line"></div>
-                    <div className="choosed-addons">
-                        <p>Online service</p>
-                        <span>$20/yr</span>
-                    </div>
                     {/* <div className="choosed-addons">
                         <p>Online service</p>
                         <span>$20/yr</span>
-                    </div> */}
+                    </div>
                     <div className="choosed-addons">
                         <p>Online service</p>
                         <span>$20/yr</span>
-                    </div>
+                    </div> */}
+                    {
+                        formData.addOns.map((addOn)=>(
+                            <div className="choosed-addons">
+                                <p>{addOn}</p>
+                                <span>$20/yr</span>
+                            </div>
+                        ))
+                    }
                 </div>
                 <div className="total">
                     <p>Total (per year)</p>

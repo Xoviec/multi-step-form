@@ -10,12 +10,16 @@ function App() {
   const [activeStep, setActiveStep] = useState(1)
   const [changable, setChangable] = useState(false)
   const [isRequired, setIsRequired] = useState(false)
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phoneNumber: '',
-    plan: ''
+    plan: '',
+    addOns: []
   });
+
+  
 
 
   const handleInputChange = (e) => {
@@ -35,6 +39,13 @@ function App() {
     //     setChangable(false)
     //   }
   };
+
+  const addActiveAddons = (addOnList) =>{
+    setFormData((prevData) => ({
+      ...prevData,
+      'addOns': addOnList
+    }));
+  }
 
 
 
@@ -93,9 +104,9 @@ function App() {
           : activeStep === 2 ? 
             <SelectPlanForm changeStep={changeStep} handleInputChange={handleInputChange} formData={formData}></SelectPlanForm>
           : activeStep === 3 ? 
-            <AddOnsForm changeStep={changeStep}></AddOnsForm>
+            <AddOnsForm changeStep={changeStep} addActiveAddons={addActiveAddons} formData={formData}></AddOnsForm>
           :  
-            <SummaryForm changeStep={changeStep}></SummaryForm>
+            <SummaryForm changeStep={changeStep} formData={formData}></SummaryForm>
 
 
 

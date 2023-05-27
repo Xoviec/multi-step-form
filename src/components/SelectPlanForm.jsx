@@ -14,12 +14,9 @@ export const SelectPlanForm = ({changeStep, formData, handleInputChange}) =>{
 
 
     const handleChangeStep = () =>{
-
-
         if(formData.plan){
             changeStep(1)
           }
-
     }
 
 

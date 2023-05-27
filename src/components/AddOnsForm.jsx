@@ -4,8 +4,31 @@ import pro from '../assets/images/icon-pro.svg'
 import { MyRadioGroup } from './shared/MyRadioGroup'
 import  Checkmark from '../assets/images/icon-checkmark.svg'
 import { MyCheckBox } from './shared/MyCheckBox'
+import { useEffect, useState } from 'react'
   
-export const AddOnsForm = ({changeStep}) =>{
+export const AddOnsForm = ({changeStep, addActiveAddons, formData}) =>{
+
+    const [addOnList, setAddOnList] = useState(formData.addOns)
+
+
+    useEffect(()=>{
+        addActiveAddons(addOnList)
+
+        
+    }, [addOnList])
+
+    const handleChangeAddOns = (e) => {
+
+        // console.log(e.target.name)
+        if(addOnList.includes(e.target.name)){
+            const newAddOnList = (addOnList.filter((addOn)=>addOn !== e.target.name))
+            setAddOnList(newAddOnList)
+        }
+        else{
+            setAddOnList([...addOnList, e.target.name])
+        }
+
+    }
 
     const addOns = [
         {
@@ -32,13 +55,13 @@ export const AddOnsForm = ({changeStep}) =>{
         <div>
         <h1>Pick add-ons</h1>
             <span>Add-ons help enhance your gaming experience.</span>
-            <div className='addons'>
+            <form className='addons' onChange={((e)=>handleChangeAddOns(e))}>
                 {
                     addOns.map((addOn)=>
-                        <MyCheckBox {...addOn} key={addOn.name}/>
+                        <MyCheckBox {...addOn} key={addOn.name} formData={formData}/>
                     )
                 }
-            </div>
+            </form>
 
            
 

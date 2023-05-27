@@ -4,8 +4,10 @@ export const UserInfoForm = ({changeStep, handleInputChange, formData}) =>{
 
     const [isRequired, setIsRequired] = useState(false)
 
-    const handleChangeStep = () =>{
 
+
+
+    const handleChangeStep = () =>{
 
         if(formData.name && formData.email && formData.phoneNumber){
             changeStep(1)
