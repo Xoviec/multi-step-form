@@ -1,5 +1,8 @@
 export const SummaryForm = ({changeStep, formData}) =>{
 
+
+    console.log(formData)
+
     return(
         <div className="step-component">
         <div>
@@ -9,36 +12,28 @@ export const SummaryForm = ({changeStep, formData}) =>{
                 <div className="sum">
                     <div className="choosed-plan">
                         <div>
-                            <p>{formData.plan} (yearly)</p>
+                            <p>{formData.plan} ({`${formData.pricing ? `Yearly` : `Monthly`}`})</p>
                             <span>Change</span>
                         </div>
                         <div>
                             <p>
-                                $90/yr
+                                $90/{`${formData.pricing ? `yr` : `mo`}`}
                             </p>
                         </div>
                     </div>
                     <div className="break-line"></div>
-                    {/* <div className="choosed-addons">
-                        <p>Online service</p>
-                        <span>$20/yr</span>
-                    </div>
-                    <div className="choosed-addons">
-                        <p>Online service</p>
-                        <span>$20/yr</span>
-                    </div> */}
                     {
                         formData.addOns.map((addOn)=>(
                             <div className="choosed-addons">
                                 <p>{addOn}</p>
-                                <span>$20/yr</span>
+                                <span>$20/{`${formData.pricing ? `yr` : `mo`}`}</span>
                             </div>
                         ))
                     }
                 </div>
                 <div className="total">
-                    <p>Total (per year)</p>
-                    <span>$120/yr</span>
+                    <p>Total ({`${formData.pricing ? `per year` : `per month`}`})</p>
+                    <span>$120/{`${formData.pricing ? `yr` : `mo`}`}</span>
                 </div>
                
             </div>

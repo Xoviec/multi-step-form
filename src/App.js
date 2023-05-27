@@ -16,7 +16,7 @@ function App() {
     email: '',
     phoneNumber: '',
     plan: '',
-    pricing: false, //false = monthly, true = yearly
+    pricing: false, // false = monthly, true = yearly
     addOns: []
   });
 
@@ -59,13 +59,6 @@ function App() {
 
     console.log(formData)
 
-
-    // if (formData.name && formData.email && formData.phoneNumber) {
-    //     // Wszystkie pola formularza są wypełnione
-    //     setChangable(true)
-    //   } else {
-    //     setChangable(false)
-    //   }
   };
 
   const addActiveAddons = (addOnList) =>{

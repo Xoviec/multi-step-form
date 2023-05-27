@@ -5,8 +5,6 @@ export const MyCheckBox = (props) =>{
 
     const [checked, setChecked] = useState(props.formData.addOns.includes(props.name))
 
-    console.log(props.formData)
-
     return(
         <div>
             <input name={props.name} className="hidden" type="checkbox" id={props.name} onChange={(()=>setChecked(!checked))}/>
@@ -23,7 +21,7 @@ export const MyCheckBox = (props) =>{
                 </span>
                 </div>
                 <p>
-                +${props.price}/yr
+                ${`${props.formData.pricing ? `${props.yearly}/yr` : `${props.monthly}/mo`}`}
                 </p>
             </label>
         </div>

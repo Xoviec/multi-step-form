@@ -9,6 +9,21 @@ import { useEffect, useState } from 'react'
 export const AddOnsForm = ({changeStep, addActiveAddons, formData}) =>{
 
     const [addOnList, setAddOnList] = useState(formData.addOns)
+    const [choosedPlan, setChoosedPlan] = useState('')
+
+
+    useEffect(() => {
+        // if(formData.pricing){
+        //     setChoosedPlan('yearly')
+        // }
+        // else{
+        //     setChoosedPlan('monthly')
+        // }
+
+        // console.log(choosedPlan)
+
+        console.log(formData.pricing)
+      });
 
 
     useEffect(()=>{
@@ -34,17 +49,20 @@ export const AddOnsForm = ({changeStep, addActiveAddons, formData}) =>{
         {
             name: 'Online service',
             subtitle: 'Access to multiplayer games',
-            price: 10
+            monthly: 1,
+            yearly: 10
         },
         {
             name: 'Large storage',
             subtitle: 'Extra 1TB of cloud save',
-            price: 20
+            monthly: 2,
+            yearly: 20
         },
         {
             name: 'Customizable profile',
             subtitle: 'Custom theme on your profile',
-            price: 20
+            monthly: 2,
+            yearly: 20
         }
 ]
 

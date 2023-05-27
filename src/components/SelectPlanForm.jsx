@@ -50,7 +50,7 @@ export const SelectPlanForm = ({changeStep, plans, changePricing, formData, hand
                             <label for={plan.name} className={`plan-card ${formData.plan === `${plan.name}` ? `active-plan` : ``}`}>
                                 <img width="40px" height="40px" src={pro} alt="" />
                                 <p>{plan.name}</p>
-                                <span>${`${choosedPlan === 'monthly' ? `${plan.monthly}/mo` : `${plan.yearly}/yr`}`}</span>
+                                <span>${`${formData.pricing ? `${plan.yearly}/yr` : `${plan.monthly}/mo`}`}</span>
                             </label>
                         </div>
                             
