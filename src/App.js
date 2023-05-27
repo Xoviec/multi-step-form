@@ -149,7 +149,7 @@ function App() {
           : activeStep === 3 ? 
             <AddOnsForm changeStep={changeStep} addActiveAddons={addActiveAddons} formData={formData} addOns={addOns}></AddOnsForm>
           :  
-            <SummaryForm changeStep={changeStep} formData={formData}  addOns={addOns}></SummaryForm>
+            <SummaryForm changeStep={changeStep} formData={formData}  addOns={addOns} plans={plans}></SummaryForm>
 
 
 

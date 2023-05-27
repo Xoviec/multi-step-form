@@ -1,16 +1,39 @@
-export const SummaryForm = ({changeStep, formData, addOns}) =>{
+import { useState, useEffect } from "react";
 
+export const SummaryForm = ({changeStep, formData, addOns, plans}) =>{
+
+    const [sum, setSum] = useState()
+    const currentPlan = plans.find((el) => el.name === formData.plan)
+
+    useEffect(() => {
+
+
+        if(formData.pricing){
+            setSum(currentPlan.yearly)
+        }
+        else{
+            setSum(currentPlan.monthly)
+        }
+
+        console.log()
+      });
+
+      let addOnsPrice = sum;
 
     console.log(formData)
 
-    formData.addOns.map((addOn) =>{
+    // formData.addOns.map((addOn) =>{
 
-        const dupa = addOn
+    //     const dupa = addOn
 
-        const ebe = addOns.find(el => el.name === addOn)
-        console.log(ebe.monthly)
-    })
+    // const currentPlan = plans.find((el) => console.log(formData.name.toLowerCase() ))
 
+        console.log(plans)
+        console.log(currentPlan)
+    //     console.log(currentPlan.monthly)
+    // })
+
+    
     console.log(addOns.map)
 
     return(
@@ -27,23 +50,34 @@ export const SummaryForm = ({changeStep, formData, addOns}) =>{
                         </div>
                         <div>
                             <p>
-                                $90/{`${formData.pricing ? `yr` : `mo`}`}
+                                ${`${formData.pricing ? `${currentPlan.yearly}/yr` : `${currentPlan.monthly}/mo`}`}
                             </p>
                         </div>
                     </div>
                     <div className="break-line"></div>
                     {
-                        formData.addOns.map((addOn)=>(
-                            <div className="choosed-addons">
+                        
+                        formData.addOns.map((addOn) => {
+                            const currentPlan = addOns.find((el) => el.name === addOn);
+                            const price = formData.pricing ? currentPlan.yearly : currentPlan.monthly;
+                            addOnsPrice += price 
+
+                            console.log(addOnsPrice)
+
+
+                            return (
+                            <div className="choosed-addons" key={addOn}>
                                 <p>{addOn}</p>
-                                <span>$/{`${formData.pricing ? `yr` : `mo`}`}</span>
+                                <span>${price}/{`${formData.pricing ? `yr` : `mo`}`}</span>
                             </div>
-                        ))
+                            )
+                        })
                     }
+
                 </div>
                 <div className="total">
                     <p>Total ({`${formData.pricing ? `per year` : `per month`}`})</p>
-                    <span>$120/{`${formData.pricing ? `yr` : `mo`}`}</span>
+                    <span>${addOnsPrice}/{`${formData.pricing ? `yr` : `mo`}`}</span>
                 </div>
                
             </div>
