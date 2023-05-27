@@ -6,7 +6,7 @@ import  Checkmark from '../assets/images/icon-checkmark.svg'
 import { MyCheckBox } from './shared/MyCheckBox'
 import { useEffect, useState } from 'react'
   
-export const AddOnsForm = ({changeStep, addActiveAddons, formData}) =>{
+export const AddOnsForm = ({changeStep, addActiveAddons, formData, addOns}) =>{
 
     const [addOnList, setAddOnList] = useState(formData.addOns)
     const [choosedPlan, setChoosedPlan] = useState('')
@@ -45,26 +45,7 @@ export const AddOnsForm = ({changeStep, addActiveAddons, formData}) =>{
 
     }
 
-    const addOns = [
-        {
-            name: 'Online service',
-            subtitle: 'Access to multiplayer games',
-            monthly: 1,
-            yearly: 10
-        },
-        {
-            name: 'Large storage',
-            subtitle: 'Extra 1TB of cloud save',
-            monthly: 2,
-            yearly: 20
-        },
-        {
-            name: 'Customizable profile',
-            subtitle: 'Custom theme on your profile',
-            monthly: 2,
-            yearly: 20
-        }
-]
+
 
 
     return(

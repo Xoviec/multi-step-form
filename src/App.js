@@ -40,6 +40,28 @@ function App() {
 
 
   ]
+
+
+  const addOns = [
+    {
+        name: 'Online service',
+        subtitle: 'Access to multiplayer games',
+        monthly: 1,
+        yearly: 10
+    },
+    {
+        name: 'Large storage',
+        subtitle: 'Extra 1TB of cloud save',
+        monthly: 2,
+        yearly: 20
+    },
+    {
+        name: 'Customizable profile',
+        subtitle: 'Custom theme on your profile',
+        monthly: 2,
+        yearly: 20
+    }
+]
   
 
   const changePricing = () =>{
@@ -125,9 +147,9 @@ function App() {
           : activeStep === 2 ? 
             <SelectPlanForm changeStep={changeStep} plans={plans} changePricing={changePricing} handleInputChange={handleInputChange} formData={formData}></SelectPlanForm>
           : activeStep === 3 ? 
-            <AddOnsForm changeStep={changeStep} addActiveAddons={addActiveAddons} formData={formData}></AddOnsForm>
+            <AddOnsForm changeStep={changeStep} addActiveAddons={addActiveAddons} formData={formData} addOns={addOns}></AddOnsForm>
           :  
-            <SummaryForm changeStep={changeStep} formData={formData}></SummaryForm>
+            <SummaryForm changeStep={changeStep} formData={formData}  addOns={addOns}></SummaryForm>
 
 
 

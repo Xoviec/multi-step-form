@@ -1,7 +1,17 @@
-export const SummaryForm = ({changeStep, formData}) =>{
+export const SummaryForm = ({changeStep, formData, addOns}) =>{
 
 
     console.log(formData)
+
+    formData.addOns.map((addOn) =>{
+
+        const dupa = addOn
+
+        const ebe = addOns.find(el => el.name === addOn)
+        console.log(ebe.monthly)
+    })
+
+    console.log(addOns.map)
 
     return(
         <div className="step-component">
@@ -26,7 +36,7 @@ export const SummaryForm = ({changeStep, formData}) =>{
                         formData.addOns.map((addOn)=>(
                             <div className="choosed-addons">
                                 <p>{addOn}</p>
-                                <span>$20/{`${formData.pricing ? `yr` : `mo`}`}</span>
+                                <span>$/{`${formData.pricing ? `yr` : `mo`}`}</span>
                             </div>
                         ))
                     }
