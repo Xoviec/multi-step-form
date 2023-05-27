@@ -16,10 +16,38 @@ function App() {
     email: '',
     phoneNumber: '',
     plan: '',
+    pricing: false, //false = monthly, true = yearly
     addOns: []
   });
 
+
+  const plans = [
+    {
+      name: 'arcade',
+      monthly: 9,
+      yearly: 90
+    },
+    {
+      name: 'advanced',
+      monthly: 12,
+      yearly: 120
+    },
+    {
+      name: 'pro',
+      monthly: 15,
+      yearly: 150
+    }
+
+
+  ]
   
+
+  const changePricing = () =>{
+    setFormData((prevData) => ({
+      ...prevData,
+      'pricing': !prevData.pricing
+    }))
+  }
 
 
   const handleInputChange = (e) => {
@@ -102,7 +130,7 @@ function App() {
           activeStep === 1 ? 
             <UserInfoForm changeStep={changeStep} handleInputChange={handleInputChange} formData={formData} ></UserInfoForm>
           : activeStep === 2 ? 
-            <SelectPlanForm changeStep={changeStep} handleInputChange={handleInputChange} formData={formData}></SelectPlanForm>
+            <SelectPlanForm changeStep={changeStep} plans={plans} changePricing={changePricing} handleInputChange={handleInputChange} formData={formData}></SelectPlanForm>
           : activeStep === 3 ? 
             <AddOnsForm changeStep={changeStep} addActiveAddons={addActiveAddons} formData={formData}></AddOnsForm>
           :  

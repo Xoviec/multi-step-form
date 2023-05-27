@@ -4,10 +4,10 @@ import pro from '../assets/images/icon-pro.svg'
 import { MyToggle } from './shared/MyToggle'
 import { useState } from 'react'
 
-export const SelectPlanForm = ({changeStep, formData, handleInputChange}) =>{
+export const SelectPlanForm = ({changeStep, plans, changePricing, formData, handleInputChange}) =>{
 
 
-    const [pricingMonthly, setPricingMonthly] = useState(false)
+    // const [pricingMonthly, setPricingMonthly] = useState(false)
 
     const [choosedPlan, setChoosedPlan] = useState('')
 
@@ -21,9 +21,9 @@ export const SelectPlanForm = ({changeStep, formData, handleInputChange}) =>{
 
 
 
-    const changePricing = () =>{
-        setPricingMonthly(!pricingMonthly)
-    }
+    // const changePricing = () =>{
+    //     setPricingMonthly(!pricingMonthly)
+    // }
 
     return(
 
@@ -32,7 +32,20 @@ export const SelectPlanForm = ({changeStep, formData, handleInputChange}) =>{
             <h1>Select your plan</h1>
                 <span>You have the option of monthly or yearly billing.</span>
                 <form className="plans" onChange={handleInputChange}>
-                    <input type='radio' name='plan' id='arcade' className='hidden' value='arcade'/>
+                    {
+                        plans.map((plan)=>
+                        <div>
+                            <input type='radio' name='plan' id={plan.name} className='hidden' value={plan.name}/>
+                            <label for={plan.name} className={`plan-card ${formData.plan === `${plan.name}` ? `active-plan` : ``}`}>
+                                <img width="40px" height="40px" src={pro} alt="" />
+                                <p>{plan.name}</p>
+                                <span>${plan.monthly}/mo</span>
+                            </label>
+                        </div>
+                            
+                        )
+                    }
+                    {/* <input type='radio' name='plan' id='arcade' className='hidden' value='arcade'/>
                     <label for='arcade' className={`plan-card ${formData.plan === `arcade` ? `active-plan` : ``}`}>
                         <img width="40px" height="40px" src={arcade} alt="" />
                         <p>Arcade</p>
@@ -43,16 +56,16 @@ export const SelectPlanForm = ({changeStep, formData, handleInputChange}) =>{
                         <img width="40px" height="40px" src={advanced} alt="" />
                         <p>Advanced</p>
                         <span>$12/mo</span>
-                    </label>
-                    <input type='radio' name='plan' id='pro' className='hidden' value='pro'/>
+                    </label> */}
+                    {/* <input type='radio' name='plan' id='pro' className='hidden' value='pro'/>
                     <label for='pro' className={`plan-card ${formData.plan === `pro` ? `active-plan` : ``}`}>
                         <img width="40px" height="40px" src={pro} alt="" />
                         <p>Pro</p>
                         <span>$15/mo</span>
-                    </label>
+                    </label> */}
                 </form>
                 <div className='plan-change'>
-                    <MyToggle pricingMonthly={pricingMonthly} changePricing={changePricing}></MyToggle>
+                    <MyToggle formData={formData} changePricing={changePricing}></MyToggle>
                 </div>
             </div>
             <div className="step-component-footer">
