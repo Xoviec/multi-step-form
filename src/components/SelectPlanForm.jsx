@@ -2,7 +2,7 @@ import arcade from '../assets/images/icon-arcade.svg'
 import advanced from '../assets/images/icon-advanced.svg'
 import pro from '../assets/images/icon-pro.svg'
 import { MyToggle } from './shared/MyToggle'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export const SelectPlanForm = ({changeStep, plans, changePricing, formData, handleInputChange}) =>{
 
@@ -19,8 +19,19 @@ export const SelectPlanForm = ({changeStep, plans, changePricing, formData, hand
           }
     }
 
+    let plan;
 
+    useEffect(() => {
+        // Update the document title using the browser API
+        if(formData.pricing){
+            setChoosedPlan('yearly')
+        }
+        else{
+            setChoosedPlan('monthly')
+        }
 
+        console.log(choosedPlan)
+      });
     // const changePricing = () =>{
     //     setPricingMonthly(!pricingMonthly)
     // }
@@ -39,7 +50,7 @@ export const SelectPlanForm = ({changeStep, plans, changePricing, formData, hand
                             <label for={plan.name} className={`plan-card ${formData.plan === `${plan.name}` ? `active-plan` : ``}`}>
                                 <img width="40px" height="40px" src={pro} alt="" />
                                 <p>{plan.name}</p>
-                                <span>${plan.monthly}/mo</span>
+                                <span>${`${choosedPlan === 'monthly' ? `${plan.monthly}/mo` : `${plan.yearly}/yr`}`}</span>
                             </label>
                         </div>
                             
