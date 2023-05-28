@@ -49,8 +49,11 @@ export const SelectPlanForm = ({changeStep, plans, changePricing, formData, hand
                             <input type='radio' name='plan' id={plan.name} className='hidden' value={plan.name}/>
                             <label for={plan.name} className={`plan-card ${formData.plan === `${plan.name}` ? `active-plan` : ``}`}>
                                 <img width="40px" height="40px" src={pro} alt="" />
-                                <p>{plan.name}</p>
-                                <span>${`${formData.pricing ? `${plan.yearly}/yr` : `${plan.monthly}/mo`}`}</span>
+                                <div className='plan-desc'>
+                                    <p>{plan.name}</p>
+                                    <span>${`${formData.pricing ? `${plan.yearly}/yr` : `${plan.monthly}/mo`}`}</span>
+                                </div>
+                                
                             </label>
                         </div>
                             

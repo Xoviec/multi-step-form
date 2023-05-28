@@ -102,6 +102,8 @@ nav{
   color: #022959;
 }
 
+
+
 .step-component span{
   color: grey;
 }
@@ -431,4 +433,81 @@ transition-duration: 150ms;
   justify-content: space-between;
   align-items: center;
   padding: 0 16px 0 16px;
+}
+
+
+@media only screen and (max-width: 1000px) {
+  body {
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+  }
+
+  .App{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 375px;
+    height: auto;
+
+  }
+
+  nav{
+    background-image: url(assets/images/bg-sidebar-mobile.svg);
+    height: 172px;
+    width: auto;
+  }
+
+  .step-list{
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .nav-step span{
+    display: none;
+  }
+
+  .nav-step p{
+    display: none;
+  }
+
+  .container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  
+
+  .step-component{
+    position: absolute;
+    top: -80px;
+    background-color: #f0f0f3;
+    max-width: 295px;
+    min-height: 35rem;
+    margin: 0;
+    padding: 0px 24px 0 24px;
+  }
+ 
+
+  .plans{
+    flex-direction: column;
+  }
+
+  .plan-card{
+    width: 16rem;
+    height: 2rem;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-grow: 0;
+    gap: 1rem;
+  }
+
+  .plan-card img{
+    flex-grow: 0;
+  }
+
+  .plan-card p{
+    margin-top: 0;
+  }
 }

@@ -140,7 +140,7 @@ function App() {
           </div>
         </div>
       </nav>
-      <container>
+      <container className='container'>
         {
           activeStep === 1 ? 
             <UserInfoForm changeStep={changeStep} handleInputChange={handleInputChange} formData={formData} ></UserInfoForm>
